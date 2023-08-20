@@ -22,16 +22,37 @@ function App() {
 
   // Each Column Definition results in one Column.
   const [columnDefs, setColumnDefs] = useState([
-    {field: 'make', filter: true},
-    {field: 'model', filter: true},
-    {field: 'price', filter: true}
+    {headerName: 'MAKE',field: 'make', editable:true, checkboxSelection:true},     //, checkboxSelection:true
+    {headerName: 'MODEL',field: 'model', editable:true },
+    {headerName: 'PRICE',field: 'price', filter: true},
+    //{headerName: 'DATE',field: 'date', filter: true}
   ]);
 
 
   // DefaultColDef sets props common to all Columns
   const defaultColDef = useMemo( ()=> ({
-    sortable: true
+    sortable: true    //trier par ordre croissant ou décroissant...
+    ,filter: true   // recherche ou filtre dans chaque colonne en fonction d'un string
+    //,filter: 'agTextColumnFilter'
   }));
+
+
+  // if we had column groups, we could provide default group items here
+  //const defaultColGroupDef = {};
+
+
+  // define a column type (you can define as many as you like)
+  //const columnTypes = {
+    //  nonEditableColumn: { editable: false },
+      //dateColumn: {
+        //  filter: 'agDateColumnFilter',
+          //filterParams: { comparator: myDateComparator },
+          //suppressMenu: true
+      //}
+  //};
+
+
+
 
 
   // Example of consuming Grid Event
@@ -77,7 +98,10 @@ function App() {
               rowSelection='multiple' // Options - allows click selection of rows
 
               onCellClicked={cellClickedListener} // Optional - registering for Grid Event
-              />
+
+              //columnTypes={columnTypes} // define a column type (you can define as many as you like)
+          />
+
         </div>
     </div>
   );
