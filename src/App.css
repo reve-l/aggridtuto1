@@ -1,8 +1,22 @@
-.App-box {
+.App-box,.App-box-s {
   text-align: left;
   margin-top: 5rem;
  display: flex;
  align-items: center;
  flex-direction: column;
  justify-content: space-between;
+}
+
+/*.ag-row-level-0 {
+  background-color: #c3c6cc !important;
+}*/
+
+@media print {
+  body {
+    overflow: visible;
+  }
+}
+
+.ag-cell {
+  page-break-inside: avoid !important;
 }
