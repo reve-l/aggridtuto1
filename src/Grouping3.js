@@ -2,9 +2,6 @@
 //import './App.css';
 
 import React, { useState, useRef, useEffect, useMemo, useCallback} from 'react';
-import { Link } from 'react-router-dom';
-
-
 import { createRoot } from 'react-dom/client';
 import { AgGridReact } from 'ag-grid-react'; // the AG Grid React Component
 
@@ -27,7 +24,7 @@ import 'ag-grid-community/styles/ag-theme-material.css'; // Optional theme CSS
 
 
 
-function Grouping() {
+function Grouping3() {
 
   const gridRef = useRef(); // Optional - for accessing Grid's API
   const [rowData, setRowData] = useState(); // Set rowData to Array of Objects, one Object per Row
@@ -36,10 +33,18 @@ function Grouping() {
   // Each Column Definition results in one Column.
   const [columnDefs, setColumnDefs] = useState([
 
-    {field: 'country',rowGroup:true,hide:true},       //,rowGroup:true pour grouper les lignes...,hide:true pour cacher la colonne
-    {field: 'age',rowGroup:true,hide:true},                         //, tooltipField:"name" 
-    {field: 'athlete'},     //, checkboxSelection:true,rowGroup:true,,hide:true
-    {field: 'year'},        //sort: 'desc',
+    {field: 'country', rowGroup:true, hide:true},       //,rowGroup:true pour grouper les lignes...,hide:true pour cacher la colonne
+    {field: 'athlete', rowGroup:true, hide:true},     //, checkboxSelection:true,rowGroup:true,,hide:true
+    {field:
+         'age'
+         /**
+          * minWidth: 250,
+            cellRenderer: (params) => {
+                return <span style={{ marginLeft: 60 }}>{params.value}</span>;
+            },
+          */
+    },                         //, tooltipField:"name" 
+    {field: 'year'},
     {field: 'date'},
     {field: 'sport'},
     {field: 'gold'},     //, checkboxSelection:true
@@ -55,10 +60,11 @@ function Grouping() {
   // DefaultColDef sets props common to all Columns
   const defaultColDef = useMemo( ()=> ({
     //sortable: true    //trier par ordre croissant ou décroissant...
-    //,filter: true   // recherche ou filtre dans chaque colonne en fonction d'un string
+    filter: true,   // recherche ou filtre dans chaque colonne en fonction d'un string
     resizable:true,
     sortable: true,
-    //flex: 1
+    flex: 1
+    //minWidth: 0
     
   }));
 
@@ -67,32 +73,25 @@ function Grouping() {
 
   const autoGroupColumnDef = useMemo(() => {
     return {
-      minWidth: 0,
-      filterValueGetter: (params) => {
-        if (params.node) {
-          var colGettingGrouped = params.colDef.showRowGroup + '';
-          return params.api.getValue(colGettingGrouped, params.node);
-        }
-      },
+        flex:1,
+      /*
+            minWidth: 0,
+                headerName: 'PAYS',
+                cellRendererParams: {
+                    suppressCount: true,
+                    checkbox: true,
+                },
+                filterValueGetter: (params) => {
+                    if (params.node) {
+                    var colGettingGrouped = params.colDef.showRowGroup + '';
+                    return params.api.getValue(colGettingGrouped, params.node);
+                    }
+                },
+        */
     };
   }, []);
 
 
-
-
-
-  const gridOptions = {
-
-    groupDisplayType:'multipleColumns',
-    resizable:true,
-    columnDefs: columnDefs,
-    defaultColDef: defaultColDef,
-    animateRows:true,
-    autoGroupColumnDef:{
-        headerName:'Bananas',
-        //cellRenderer:'agGroupCellRenderer'
-    }
-  }
 
 
 
@@ -123,12 +122,23 @@ function Grouping() {
 
 
 
+  const groupRowRendererParams = {
+    // puts a checkbox onto each group row
+    //checkbox: true,
+    // puts a row dragger onto each group row
+    rowDrag: true
+};
+
+
+
+
+
 
 
   return (
     <div className="App-box">
-        <h1>PRESENTATION 5</h1>
-        <span>MULTIPLE GROUP COLUMNS</span>
+        <h1>TUTO 7</h1>
+        <span>ROW GROUPING - GROUP ROWS</span>
 
 
         {/* On div wrapping Grid a) specify theme CSS Class Class and b) sets Grid size */}
@@ -148,17 +158,23 @@ function Grouping() {
               //enableRangeSelection={enableRangeSelection}
 
               autoGroupColumnDef={autoGroupColumnDef}
-              groupHideOpenParents={true}
+              //groupHideOpenParents={true}
 
               onGridReady={onGridReady}
+              groupDisplayType={'groupRows'}//{'singleColumn'}
+
+              groupRowRendererParams={groupRowRendererParams}
+
+              rowGroupPanelShow={'always'}
+
+              groupDefaultExpanded={1}
           />
 
         </div>
-        <Link to="/" className="mt-3"> ACCUEIL</Link>
     </div>
   );
 
 
 }
 
-export default Grouping;
+export default Grouping3;

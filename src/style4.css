@@ -1,0 +1,30 @@
+/* enable row hover for full width rows, since it is not applied by default */
+.ag-full-width-row.ag-row-hover {
+    background-color: var(--ag-row-hover-color);
+  }
+
+  /*.ag-full-width-row{background-color: #67e6dc;}*/
+
+
+  .groupTitle {
+    font-size: 16px;
+    font-weight:500;
+    /*background-color: rgba(103, 230, 220,0.7);*/
+  }
+  .medal {
+    margin: 0 5px;
+  }
+  .gold {
+    color: #e4ab11;
+  }
+  .silver {
+    color: #bbb4bb;
+  }
+  .bronze {
+    color: #be9088;
+  }
+  .flag {
+    margin: 0 4px;
+    position: relative;
+    top: 2px;
+  }

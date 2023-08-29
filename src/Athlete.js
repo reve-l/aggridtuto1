@@ -1,9 +1,12 @@
 //import logo from './logo.svg';
-
+import './Atrhlete.css';
 import React, { useState, useRef, useEffect, useMemo, useCallback} from 'react';
+import { Link } from 'react-router-dom';
+
 import { createRoot } from 'react-dom/client';
 import { AgGridReact } from 'ag-grid-react'; // the AG Grid React Component
 
+import 'ag-grid-enterprise';
 
 import YearFilter from './YearFilter';
 
@@ -154,18 +157,19 @@ function Athlete() {
   return (
     <div className="App-box-s">
 
-        <h1>GESTION DES ATHLETES TUTO2</h1>
+        <h1>PRESENTATION 2</h1>
+        <h4>selection m - tri - champ de filtre avec saisie - date filter - save - restore</h4>
 
         
         <div>  
-          <button onClick={onBtPrint}>Print</button>                  
+           {/*<button onClick={onBtPrint}>Print</button> */}                 
           <button onClick={onBtnSave}>Save</button>
           <button onClick={onBtnRestore}>Restore</button>
         </div>
 
 
         {/* On div wrapping Grid a) specify theme CSS Class Class and b) sets Grid size */}
-        <div className="ag-theme-balham" style={{width: '95%', height: 500}} id="myGrid">
+        <div className="ag-theme-balham" style={{width: '95%', height: 500}} id="">
 
           <AgGridReact
 
@@ -184,6 +188,8 @@ function Athlete() {
           />
 
         </div>
+        <Link to="/" className="mt-3"> ACCUEIL</Link>
+
     </div>
   );
 

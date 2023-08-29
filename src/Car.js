@@ -2,6 +2,8 @@
 //import './App.css';
 
 import React, { useState, useRef, useEffect, useMemo, useCallback} from 'react';
+import { Link } from 'react-router-dom';
+
 import { createRoot } from 'react-dom/client';
 import { AgGridReact } from 'ag-grid-react'; // the AG Grid React Component
 
@@ -96,7 +98,7 @@ function Car() {
 
   return (
     <div className="App-box">
-<h1>GESTION DES VOITURES TUTO1</h1>
+<h1>PRESENTATION 1</h1>
 
         {/* Example using Grid's API */}
         <button onClick={buttonListener} className='mb-3'>Déselection</button><br/>
@@ -124,6 +126,7 @@ function Car() {
           />
 
         </div>
+        <Link to="/"> ACCUEIL</Link>
     </div>
   );
 

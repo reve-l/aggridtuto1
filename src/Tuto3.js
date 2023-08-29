@@ -1,6 +1,8 @@
 //import logo from './logo.svg';
 
 import React, { useState, useRef, useEffect, useMemo, useCallback} from 'react';
+import { Link } from 'react-router-dom';
+
 import { createRoot } from 'react-dom/client';
 import { AgGridReact } from 'ag-grid-react'; // the AG Grid React Component
 import 'ag-grid-enterprise';
@@ -145,7 +147,8 @@ function Tuto3() {
   return (
     <div className="App-box-s">
 
-        <h1>GESTION DES ATHLETES TUTO3</h1>
+        <h1>PRESENTATION 3</h1>
+        <h4>selection - tri - champ de filtre sans saisie - save - restore</h4>
 
         
             <div>  
@@ -158,7 +161,7 @@ function Tuto3() {
 
 
         {/* On div wrapping Grid a) specify theme CSS Class Class and b) sets Grid size */}
-        <div className="ag-theme-balham" style={{width: '95%', height: 500}} id="myGrid">
+        <div className="ag-theme-balham" style={{width: '95%', height: 500}} id="">
 
           <AgGridReact
 
@@ -177,6 +180,8 @@ function Tuto3() {
           />
 
         </div>
+        <Link to="/" className="mt-3"> ACCUEIL</Link>
+
     </div>
   );
 

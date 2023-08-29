@@ -2,6 +2,8 @@
 //import './App.css';
 
 import React, { useState, useRef, useEffect, useMemo, useCallback} from 'react';
+import { Link } from 'react-router-dom';
+
 import { createRoot } from 'react-dom/client';
 import { AgGridReact } from 'ag-grid-react'; // the AG Grid React Component
 
@@ -100,8 +102,8 @@ function AgChart() {
 
   return (
     <div className="App-box">
-        <h1>GESTION DES VOITURES TUTO4</h1>
-        <span>création des charts</span>
+        <h1>PRESENTATION 4</h1>
+        <span>création des charts par selection</span>
 
 
         {/* On div wrapping Grid a) specify theme CSS Class Class and b) sets Grid size */}
@@ -122,6 +124,7 @@ function AgChart() {
           />
 
         </div>
+        <Link to="/" className="mt-3"> ACCUEIL</Link>
     </div>
   );
 

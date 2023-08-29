@@ -1,0 +1,154 @@
+.ag-theme-alpine .ag-row-group {
+    /*font-weight: bold;
+    color: yellow;*/
+    --ag-header-background-color:red;
+  }
+
+
+
+
+  .ag-theme-alpine .ag-header-cell-label {
+    font-style: italic;
+}
+
+.ag-theme-alpine .ag-footer-color {
+    color: red;
+}
+
+
+
+
+
+  .coltest{
+    color:rgba(27, 20, 100,1.0) !important;
+    padding-left:1px;
+  }
+
+  /*.subtotal tr {background-color:red !important;text-align:right;}*/
+
+  /*.ag-theme-alpine {
+    /* bright green, 10% opacity 
+    --ag-selected-row-background-color: red;
+}*/
+
+
+.ag-theme-alpine {
+    --ag-range-selection-border-color: rgb(193, 0, 97);
+    --ag-range-selection-border-style: dashed;
+    --ag-range-selection-background-color: rgb(255, 0, 128, 0.5) !important;
+    /* these next 3 variables control the background colour when 2, 3 or 4+ ranges overlap,
+       and should have progressively greater opacity to look realistic - see the docs below
+       for the correct formulas to use */
+    --ag-range-selection-background-color-2: rgb(255, 0, 128, 0.19);
+    --ag-range-selection-background-color-3: rgb(255, 0, 128, 0.27);
+    --ag-range-selection-background-color-4: rgb(255, 0, 128, 0.34);
+
+    --ag-range-selection-highlight-color: rgb(60, 188, 0, 0.3);
+}
+
+
+
+.ag-theme-alpine {
+    --ag-foreground-color: rgba(126, 46, 132,1);
+    --ag-background-color: transparent;/*rgba(249, 245, 227,0.1);*/
+    --ag-header-foreground-color: #000;/*rgb(204, 245, 172);*/
+    --ag-header-background-color: rgba(255, 107, 129,0.2);/*rgb(209, 64, 129,0.3);*/
+    --ag-odd-row-background-color: transparent;/*rgb(0, 0, 0, 0.1);*/
+    --ag-header-column-resize-handle-color: rgba(153, 128, 250,0.5);/*rgb(126, 46, 132);*/
+
+    --ag-font-size: 12px;
+    --ag-font-family: monospace;
+
+
+    --ag-range-selection-background-color:red !important;
+    --ag-row-hover-color:rgba(87, 88, 187,0.1);
+   /* --ag-row-border-color:#777;*/
+    --ag-row-hover-border:dashed;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.ag-row-group.ag-row-level-0 {
+    background-color: #f0ffff;
+  }
+  
+  .ag-row-group.ag-row-level-1 {
+    background-color: rgba(223, 228, 234,0.3);
+  }
+
+
+
+
+  .ag-floating-bottom-viewport{
+    background-color: blue;
+  }
+
+  .ag-pinned-right-floating-bottom{
+    background-color: darkorange;
+  }
+
+
+
+
+
+  .ag-row-level-0 {
+    background-color: #c3c6cc !important;
+  }
+  
+  .ag-cell {
+    page-break-inside: avoid !important;
+  }
+
+  @media print {
+    body {
+      overflow: visible;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  #myGrid {
+   flex: 2;
+    height: auto !important;
+  }
+  
+  .my-chart {
+    margin-top: 0.5rem;
+    border: 1px solid var(--ag-border-color);
+    flex: 1;
+  } 
+
+
+  .titleP{
+    text-align: center;
+  }

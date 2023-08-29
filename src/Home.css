@@ -1,0 +1,50 @@
+
+
+
+main{
+    margin-top: -40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    /*display: flex;*/
+    text-align: center;
+    height: 70vh;
+   
+}
+.menu1{
+    background-color: #c3c6cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: ridge 4px #777;
+    height: 100%;
+    
+} 
+.menu1 ul{
+    width: 35%;
+    font-size: 2rem;
+    font-weight: 900;
+    list-style: none;
+}
+.menu1 ul li{
+    margin: 1rem 0 1rem 0;
+}
+.menu1 ul li a{
+    color: black; 
+    text-decoration: none;
+}
+.menu1 ul li a:hover{
+    color: #777;
+}
+.menu1 ul li:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: fuchsia;
+    border-radius: 30%;
+    padding: 3px;
+    font-size: 1.5rem;
+    color: #777;
+}
+h3 span{
+    background-color: fuchsia;
+}

@@ -2,6 +2,8 @@
 //import './App.css';
 
 import React, { useState, useRef, useEffect, useMemo, useCallback} from 'react';
+import { Link } from 'react-router-dom';
+
 import { createRoot } from 'react-dom/client';
 import { AgGridReact } from 'ag-grid-react'; // the AG Grid React Component
 
@@ -13,7 +15,6 @@ import 'ag-grid-community/styles/ag-grid.css'; // Core grid CSS, always needed
 import 'ag-grid-community/styles/ag-theme-alpine.css'; // Optional theme CSS
 import 'ag-grid-community/styles/ag-theme-balham.css'; // Optional theme CSS
 import 'ag-grid-community/styles/ag-theme-material.css'; // Optional theme CSS
-import { RowGroupDropZonePanel } from '@ag-grid-enterprise/all-modules';
 
 
 
@@ -34,13 +35,9 @@ function Grouping2() {
   // Each Column Definition results in one Column.
   const [columnDefs, setColumnDefs] = useState([
 
-
-    {RowGroupPanelShow:'always'},
-
-
-    {field: 'country',rowGroup:true,hide:true},       //,rowGroup:true pour grouper les lignes...,hide:true pour cacher la colonne
+    {field: 'country', rowGroup:true, hide:true},       //,rowGroup:true pour grouper les lignes...,hide:true pour cacher la colonne
+    {field: 'athlete', rowGroup:true, hide:true},     //, checkboxSelection:true,rowGroup:true,,hide:true
     {field: 'age'},                         //, tooltipField:"name" 
-    {field: 'athlete',rowGroup:true,hide:true},     //, checkboxSelection:true,rowGroup:true,,hide:true
     {field: 'year'},
     {field: 'date'},
     {field: 'sport'},
@@ -57,12 +54,11 @@ function Grouping2() {
   // DefaultColDef sets props common to all Columns
   const defaultColDef = useMemo( ()=> ({
     //sortable: true    //trier par ordre croissant ou décroissant...
-    //,filter: true   // recherche ou filtre dans chaque colonne en fonction d'un string
-    flex: 1,
-    //minWidth: 100,
-    filter: true,
+    filter: true,   // recherche ou filtre dans chaque colonne en fonction d'un string
+    resizable:true,
     sortable: true,
-    resizable: true,
+    flex: 1
+    //minWidth: 0
     
   }));
 
@@ -71,24 +67,24 @@ function Grouping2() {
 
   const autoGroupColumnDef = useMemo(() => {
     return {
-      minWidth: 1,
-
-
-      headerName: 'PAYS',
-      cellRendererParams: {
-          //suppressCount: true,
-         // checkbox: true,
-      },
-
-/*
-      filterValueGetter: (params) => {
-        if (params.node) {
-          var colGettingGrouped = params.colDef.showRowGroup + '';
-          return params.api.getValue(colGettingGrouped, params.node);
-        }
-      },*/
+        flex:1,
+      /*
+            minWidth: 0,
+                headerName: 'PAYS',
+                cellRendererParams: {
+                    suppressCount: true,
+                    checkbox: true,
+                },
+                filterValueGetter: (params) => {
+                    if (params.node) {
+                    var colGettingGrouped = params.colDef.showRowGroup + '';
+                    return params.api.getValue(colGettingGrouped, params.node);
+                    }
+                },
+        */
     };
   }, []);
+
 
 
 
@@ -124,7 +120,7 @@ function Grouping2() {
 
   return (
     <div className="App-box">
-        <h1>TUTO 6</h1>
+        <h1>PRESENTATION 6</h1>
         <span>SINGLE GROUP COLUMNS</span>
 
 
@@ -141,6 +137,9 @@ function Grouping2() {
 
               animateRows={true} // Optional - set to 'true' to have rows animate when sorted
 
+              //enableCharts={enableCharts}
+              //enableRangeSelection={enableRangeSelection}
+
               autoGroupColumnDef={autoGroupColumnDef}
               //groupHideOpenParents={true}
 
@@ -149,6 +148,8 @@ function Grouping2() {
           />
 
         </div>
+        <Link to="/" className="mt-3"> ACCUEIL</Link>
+
     </div>
   );
 
