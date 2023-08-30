@@ -148,7 +148,7 @@ function Tuto3() {
     <div className="App-box-s">
 
         <h1>PRESENTATION 3</h1>
-        <h4>selection - tri - champ de filtre sans saisie - save - restore</h4>
+        <h4>selection - tri - champ de filtre avec saisie - save - restore</h4>
 
         
             <div>  

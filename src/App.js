@@ -22,6 +22,8 @@ import Grouping7 from "./Grouping7";
 import Grouping8 from "./Grouping8";
 import Grouping9 from "./Grouping9";
 import Grouping10 from "./Grouping10";
+import Crud from "./Crud";
+
 
 
 import Home from "./Home";
@@ -77,6 +79,9 @@ function App() {
           <Route path="presentation11" element={<Grouping8 />} />
           <Route path="presentation12" element={<Grouping9 />} />
           <Route path="presentation13" element={<Grouping10 />} />
+
+          <Route path="presentation14" element={<Crud />} />
+
           <Route path="*" element={<Missing />} />
       </Routes>
     </div>

@@ -126,7 +126,7 @@ function Car() {
           />
 
         </div>
-        <Link to="/"> ACCUEIL</Link>
+        <Link to="/" className='mt-3'> ACCUEIL</Link>
     </div>
   );
 

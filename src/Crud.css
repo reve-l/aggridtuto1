@@ -1,0 +1,16 @@
+.crud{
+    
+    padding-top:5rem;
+    margin: 1rem;
+}
+.crud button{
+   margin-bottom: 1rem;
+   /*margin-left: 2rem;*/
+}
+
+.action-col button{
+    color: #777;
+}
+.crud button:hover{
+    background-color: aliceblue;
+}

@@ -158,7 +158,7 @@ function Athlete() {
     <div className="App-box-s">
 
         <h1>PRESENTATION 2</h1>
-        <h4>selection m - tri - champ de filtre avec saisie - date filter - save - restore</h4>
+        <h4>selection m - tri - champ de filtre sans saisie - date filter - save - restore</h4>
 
         
         <div>  
